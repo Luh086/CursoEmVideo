@@ -1,0 +1,21 @@
+print('\033[1;34mSimulação de Emprestimo\033[m')
+
+casa = float(input('Informe o valor do Imóvel: R$ '))
+salario = float(input('Informe seu sálario mensal: R$ '))
+anos = float(input('Informe em quantos anos deseja parcelar: '))
+
+meses = (anos * 12)
+parcela = casa/meses
+porcentagem = salario * 0.30
+
+
+if parcela > porcentagem:
+    print('\033[1;31mInfelizmente não poderemos aprovar sua solicitação no momento.\033[m')
+    print('Seu parcelamento ficou com valor acima de 30% da sua renda')
+
+else:
+    print('\033[1;34mParabéns seu emprestimo foi aprovado\033[m')
+    print('Confira condições abaixo:')
+    print('\033[1;32m_\033[m'*20)
+    print('\033[1mValor da parcela:\033[m R$ {:.2f}'.format(parcela))
+    print('\033[1mQuantidade de parcelas:\033[m {} meses'.format(meses))
