@@ -1,0 +1,55 @@
+from time import sleep
+from random import randint
+
+print('Suas Opções:')
+print('[ 0 ] PEDRA')
+print('[ 1 ] PAPEL')
+print('[ 2 ] TESOURA')
+jogador = int(input('O que você vai jogar? '))
+computador = randint(0, 2)
+
+print('='*20)
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PO !!!')
+print('='*20)
+sleep(1)
+
+if computador == 1 and jogador == 1 or computador == 2 and jogador == 2 or computador == 0 and jogador == 0:
+    print('\033[1;33mFOI EMPATE !!\033[m')
+    print('Vamos jogar novamente?')
+
+elif computador == 1 and jogador == 2:
+    print('\033[1;34mParabéns você venceu !!\033[m')
+    print('Jogador escolheu TESOURA')
+    print('Computador escolheu PAPEL')
+
+elif computador == 2 and jogador == 1:
+    print('\033[1;31mQue pena!! Você perdeu.\033[m')
+    print('Jogador escolheu PAPEL')
+    print('Computador escolheu TESOURA')
+
+elif computador == 0 and jogador == 1:
+    print('\033[1;34mParabéns você venceu !!\033[m')
+    print('Jogador escolheu PAPEL')
+    print('Computador escolheu PEDRA')
+
+elif computador == 1 and jogador == 0:
+    print('\033[1;31mQue pena!! Você perdeu.\033[m')
+    print('Jogador escolheu PEDRA')
+    print('Computador escolheu PAPEL')
+
+elif computador == 2 and jogador == 0:
+    print('\033[1;31mQue pena!! Você perdeu.\033[m')
+    print('Jogador escolheu TESOURA')
+    print('Computador escolheu PEDRA')
+
+elif computador == 0 and jogador == 2:
+    print('\033[1;34mParabéns você venceu !!\033[m')
+    print('Jogador escolheu PEDRA')
+    print('Computador escolheu TESOURA')
+
+else:
+    print('\033[1;41mOpção Inválida. Tente Novamente\033[m')
