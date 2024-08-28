@@ -1,0 +1,55 @@
+from time import sleep
+
+print('\033[1;34m======= CHECKOUT ======\033[m')
+compra = float(input('Qual valor da sua compra? R$ '))
+
+print('Qual a forma de pagamento?')
+print('[ 1 ] Dinheiro/Cheque')
+print('[ 2 ] Cartão Á Vista')
+print('[ 3 ] Cartão 2x s/ juros')
+print('[ 4 ] Cartão de 3x a 12x c/ juros')
+pagamento = int(input('Digite a opção desejada: '))
+
+if pagamento == 1:
+    desconto = compra * 0.10
+    total = compra - desconto
+    print('\033[1;36m--\033[m'*20)
+    print('Forma de pagamento selecionada: \033[1;42mDinheiro/Cheque\033[m')
+    print('\033[1mCompra: R$ {:.2f}'.format(compra))
+    print('Desconto: R$ {:.2f}'.format(desconto))
+    print('Total: R$ {:.2f}\033[m'.format(total))
+
+elif pagamento == 2:
+    desconto = compra * 0.05
+    total = compra - desconto
+    print('\033[1;36m--\033[m' * 20)
+    print('Forma de pagamento selecionada: \033[1;43mCartão Á Vista\033[m')
+    print('\033[1mCompra: R$ {:.2f}'.format(compra))
+    print('Desconto: R$ {:.2f}'.format(desconto))
+    print('Total: R$ {:.2f}\033[m'.format(total))
+
+elif pagamento == 3:
+    parcela = compra / 2
+    print('\033[1;36m--\033[m' * 20)
+    print('Forma de pagamento selecionada: \033[1;45mCartão 2x s/ juros.\033[m')
+    print('\033[1mCompra: R$ {:.2f}'.format(compra))
+    print('Valor da parcela: R$ {:.2f}'.format(parcela))
+    print('Total: R$ {:.2f}\033[m'.format(compra))
+
+elif pagamento == 4:
+    print('\033[1;36m--\033[m' * 20)
+    print('Forma de pagamento selecionada: \033[1;41mCartão de 3x a 12x c/ juros.\033[m')
+    parcelamento = int(input('Em quantas vezes deseja parcelar: '))
+    print('\033[1;36m--\033[m' * 20)
+    print('\033[1;36mCARREGANDO...\033[m')
+    sleep(2)
+    acrescimo = compra * 0.20
+    total = compra + acrescimo
+    parcela = total / parcelamento
+    print('\033[1mCompra: R$ {:.2f}'.format(compra))
+    print('Juros: R$ {:.2f}'.format(acrescimo))
+    print('Valor da Parcela: R$ {:.2f}'.format(parcela))
+    print('Total: R$ {:.2f}\033[m'.format(total))
+
+else:
+    print('\033[1;31mOpção Inválida. Tente Novamente\033[m')
