@@ -1,0 +1,27 @@
+soma = 0
+cont = 0
+midade = 0
+maioridadehomem = 0
+homemmaisvelho = ''
+
+for c in range(1, 5):
+    print('--------- {}ª PESSOA ---------'.format(c))
+    nome = str(input('NOME: ')).strip().upper()
+    idade = int(input('IDADE: '))
+    sexo = str(input('SEXO [M/F]: ')).strip().upper()
+    soma += idade
+
+    if c == 1 and sexo == 'M':
+        maioridadehomem = idade
+        homemmaisvelho = nome
+    if sexo == 'M' and idade > maioridadehomem:
+        maioridadehomem = idade
+        homemmaisvelho = nome
+
+    if sexo == 'F' and idade < 20:
+        cont += 1
+
+midade = soma / 4
+print('A média do grupo é {:.1f} anos'.format(midade))
+print('O homem mais velho tem {} anos e se chama {}'.format(maioridadehomem, homemmaisvelho))
+print('A quantidade de mulheres abaixo de 20 anos é: {}'.format(cont))
